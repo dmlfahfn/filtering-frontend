@@ -4,18 +4,19 @@ const Filter = ({videos}) => {
 
 
     const uniqueProducts = [...new Set(videos.map(item => item.product))];
-
     const uniqueVersions = [...new Set(videos.map(item => item.version))];
 
-
-    // const [checked, setChecked] = useState(false)
+    const handleOnChange = (e) => {
+        e.preventDefault();
+        console.log(typeof e.target.name);
+    }
     
     return (
         <div className="filter-container">
             <h4>Products</h4>
             {uniqueProducts.map(filter => (
                 <div key={filter}>
-                    <input type="checkbox" name={filter} /> {filter}
+                    <input type="checkbox" name={filter} onChange={handleOnChange}/> {filter}
                 </div>
             ))}
             <h4>Version</h4>
