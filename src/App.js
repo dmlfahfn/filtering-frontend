@@ -1,6 +1,7 @@
 import './App.css';
 import Filter from "./components/Filter";
 import VideoDisplay from "./components/VideoDisplay";
+import Search from "./components/Search";
 import img1 from "./img/img_avatar.png";
 import img2 from "./img/img_avatar2.png";
 
@@ -43,6 +44,7 @@ function App() {
 
   return (
     <div className="App">
+      <Search />
       <Filter videos={videos}/>
       <VideoDisplay videos={videos}/>
     </div>

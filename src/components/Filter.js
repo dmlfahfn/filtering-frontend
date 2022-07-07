@@ -1,22 +1,27 @@
-import React from "react";
+import React,  {useState} from "react";
 
 const Filter = ({videos}) => {
 
+
+    const uniqueProducts = [...new Set(videos.map(item => item.product))];
+
+    const uniqueVersions = [...new Set(videos.map(item => item.version))];
+
+
+    // const [checked, setChecked] = useState(false)
     
     return (
         <div className="filter-container">
             <h4>Products</h4>
-            {videos.map(filter => (
-                <div key={filter.id}>
-                    <input type="checkbox" name={filter.product} />
-                    <label htmlFor={filter.product}>{filter.product}</label>
+            {uniqueProducts.map(filter => (
+                <div key={filter}>
+                    <input type="checkbox" name={filter} /> {filter}
                 </div>
             ))}
             <h4>Version</h4>
-            {videos.map(filter => (
-                <div key={filter.id}>
-                    <input type="checkbox" name={filter.version} />
-                    <label htmlFor={filter.version}>{filter.version}</label>
+            {uniqueVersions.map(filter => (
+                <div key={filter}>
+                    <input type="checkbox" name={filter} /> {filter}
                 </div>
             ))}
         </div>
