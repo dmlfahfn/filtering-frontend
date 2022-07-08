@@ -1,14 +1,25 @@
-import React,  {useState} from "react";
+import React, { useState } from "react";
 
 const Filter = ({videos}) => {
 
+    const [isChecked, setIsChecked] = useState(false)
+
+    let filteredProducts = [];
 
     const uniqueProducts = [...new Set(videos.map(item => item.product))];
     const uniqueVersions = [...new Set(videos.map(item => item.version))];
 
     const handleOnChange = (e) => {
-        e.preventDefault();
-        console.log(typeof e.target.name);
+        setIsChecked(!isChecked)
+        videos.filter(product => {
+            if(e.target.name === product.product){
+                filteredProducts.push(product)
+            }
+            return filteredProducts
+        })
+
+        console.log(filteredProducts);
+
     }
     
     return (
@@ -16,7 +27,7 @@ const Filter = ({videos}) => {
             <h4>Products</h4>
             {uniqueProducts.map(filter => (
                 <div key={filter}>
-                    <input type="checkbox" name={filter} onChange={handleOnChange}/> {filter}
+                    <input type="checkbox" name={filter} checked={isChecked} onChange={handleOnChange}/> {filter}
                 </div>
             ))}
             <h4>Version</h4>
