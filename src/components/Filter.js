@@ -1,33 +1,29 @@
-import React, { useState } from "react";
+import React from "react";
 
-const Filter = ({videos}) => {
+const Filter = (props) => {
 
-    const [isChecked, setIsChecked] = useState(false)
-
-    let filteredProducts = [];
-
-    const uniqueProducts = [...new Set(videos.map(item => item.product))];
-    const uniqueVersions = [...new Set(videos.map(item => item.version))];
+    const uniqueProducts = [...new Set(props.videos.map(item => item.product))];
+    const uniqueVersions = [...new Set(props.videos.map(item => item.version))];
 
     const handleOnChange = (e) => {
-        setIsChecked(!isChecked)
-        videos.filter(product => {
+        props.videos.filter(product => {
             if(e.target.name === product.product){
-                filteredProducts.push(product)
+                product.isChecked = true;
+                if(!props.filteredArray.includes(product)){
+                    props.setFilteredArray([...props.filteredArray, product])
+                }
             }
-            return filteredProducts
+            return props.filteredArray
         })
-
-        console.log(filteredProducts);
-
+        
     }
-    
+  
     return (
         <div className="filter-container">
             <h4>Products</h4>
             {uniqueProducts.map(filter => (
                 <div key={filter}>
-                    <input type="checkbox" name={filter} checked={isChecked} onChange={handleOnChange}/> {filter}
+                    <input type="checkbox" name={filter} onChange={handleOnChange}/> {filter}
                 </div>
             ))}
             <h4>Version</h4>
@@ -35,7 +31,7 @@ const Filter = ({videos}) => {
                 <div key={filter}>
                     <input type="checkbox" name={filter} /> {filter}
                 </div>
-            ))}
+            ))} :
         </div>
     )
 }
