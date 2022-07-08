@@ -8,9 +8,11 @@ const Filter = (props) => {
     const handleOnChange = (e) => {
         props.videos.filter(product => {
             if(e.target.name === product.product){
-                product.isChecked = true;
+                product.isChecked = true;  
                 if(!props.filteredArray.includes(product)){
-                    props.setFilteredArray([...props.filteredArray, product])
+                    console.log(props.filteredArray.hasOwnProperty(product));
+                    props.setFilteredArray(current =>[...current, product])
+                    console.log(props.filteredArray)
                 }
             }
             return props.filteredArray
@@ -31,7 +33,7 @@ const Filter = (props) => {
                 <div key={filter}>
                     <input type="checkbox" name={filter} /> {filter}
                 </div>
-            ))} :
+            ))}
         </div>
     )
 }
