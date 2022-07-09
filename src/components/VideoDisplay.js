@@ -2,6 +2,11 @@ import React from "react";
 
 const VideoDisplay = ({videos, filteredArray}) => {
   console.log(filteredArray);
+  
+  if(filteredArray.length !== 0){
+    videos = filteredArray
+  }
+
   return (
       <div className="Video-container">
           {videos.map(video => (
@@ -12,7 +17,7 @@ const VideoDisplay = ({videos, filteredArray}) => {
                   <p>{video.description}</p>
                   <time>{video.version}</time>
                 </div>
-              </div>
+              </div>               
           ))}
       </div>
   )
