@@ -25,8 +25,9 @@ const Filter = (props) => {
                 console.log('✅ Checkbox is checked');
                 props.videos.filter(product => {
                 if(e.target.name === product.product){
-                    if(props.filteredArray.hasOwnProperty(product)){
-                        props.setFilteredArray(current =>[...current, product])
+                    product.isChecked = true
+                    if(product.isChecked === true){
+                        props.setFilteredArray([...props.filteredArray, product])
                     }
                 }
                else {
@@ -35,10 +36,7 @@ const Filter = (props) => {
               }
               setIsSubscribed(current => !current);
               return props.filteredArray
-        
-        
 
-        
     }
   
     return (

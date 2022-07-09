@@ -1,7 +1,7 @@
 import React from "react";
 
-const VideoDisplay = ({videos, filteredProducts}) => {
-  console.log(filteredProducts);
+const VideoDisplay = ({videos, filteredArray}) => {
+  console.log(filteredArray);
   return (
       <div className="Video-container">
           {videos.map(video => (

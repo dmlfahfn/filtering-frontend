@@ -53,7 +53,7 @@ const [filteredArray, setFilteredArray] = useState([])
     <div className="App">
       <Search />
       <Filter videos={videos} {...{filteredArray, setFilteredArray}}/>
-      <VideoDisplay videos={videos} filteredProducts= {filteredArray}/>
+      <VideoDisplay videos={videos} filteredArray= {filteredArray}/>
     </div>
   );
 }
