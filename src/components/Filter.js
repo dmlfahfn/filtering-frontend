@@ -13,7 +13,7 @@ const Filter = (props) => {
                 console.log('✅ Checkbox is checked');
 
                 props.videos.map(product => {
-                    if(e.target.name === product.product){
+                    if(e.target.name === product.product || e.target.name === product.version){
                         props.setFilteredArray([...props.filteredArray, product]);
                         return props.filteredArray
                     } 
@@ -26,7 +26,6 @@ const Filter = (props) => {
                     if(e.target.checked === false){
                         const temp = [...props.filteredArray]
                         temp.pop(product)
-                        console.log("temp",temp);
                         props.setFilteredArray(temp)
                         return props.filteredArray
                     }
@@ -35,8 +34,6 @@ const Filter = (props) => {
           
               
               setIsSubscribed(current => !current);
-            
-
     }
   
     return (
@@ -50,7 +47,7 @@ const Filter = (props) => {
             <h4>Version</h4>
             {uniqueVersions.map(filter => (
                 <div key={filter}>
-                    <input type="checkbox" name={filter} /> {filter}
+                    <input type="checkbox" name={filter} value={isSubscribed} onChange={handleOnChange} /> {filter}
                 </div>
             ))}
         </div>
