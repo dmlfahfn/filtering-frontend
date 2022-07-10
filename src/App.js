@@ -15,8 +15,7 @@ function App() {
     title: "Loading data from catalog",
     description: "This is some description text...",
     product: "Qlik catalog",
-    version: "November 2021",
-    isChecked: false
+    version: "November 2021"
   },
   {
     id: 2,
@@ -24,8 +23,7 @@ function App() {
     title: "Get to know the loop block",
     description: "This is some description text...",
     product: "Qlik catalog",
-    version: "November 2021",
-    isChecked: false
+    version: "November 2021"
   },
   {
     id: 3,
@@ -33,8 +31,7 @@ function App() {
     title: "This is another TITLE!!!",
     description: "This is some description text...",
     product: "QlikView",
-    version: "December 2021",
-    isChecked: false
+    version: "December 2021"
   },
   {
     id: 4,
@@ -42,8 +39,7 @@ function App() {
     title: "Another title",
     description: "This is some description text.",
     product: "Alerting",
-    version: "October 2021",
-    isChecked: false
+    version: "October 2021"
   }
 ]
 
