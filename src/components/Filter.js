@@ -8,32 +8,31 @@ const Filter = (props) => {
     const uniqueVersions = [...new Set(props.videos.map(item => item.version))];
 
     const handleOnChange = (e) => {
-
-            if (e.target.checked ) {
-                console.log('✅ Checkbox is checked');
-
-                props.videos.map(product => {
+    
+        let arr =[...props.filteredArray]
+        if (e.target.checked ) {
+                props.videos.filter(product => {
                     if(e.target.name === product.product || e.target.name === product.version){
-                        props.setFilteredArray([...props.filteredArray, product]);
+                        arr.push(product)
+                        props.setFilteredArray(arr);
+                        console.log("1",props.filteredArray);
                         return props.filteredArray
                     } 
-                })
+                })  
             }
                else {
-                console.log('⛔️ Checkbox is NOT checked');
-
-                props.videos.map(product => {
                     if(e.target.checked === false){
-                        const temp = [...props.filteredArray]
-                        temp.pop(product)
+                        let temp = [...props.filteredArray]
+                        temp.splice(props.filteredArray.indexOf(e.target.name), 1)
                         props.setFilteredArray(temp)
+                        console.log("2",props.filteredArray);
+
                         return props.filteredArray
                     }
-                })
-               }
-          
-              
+               }                        
               setIsSubscribed(current => !current);
+
+
     }
   
     return (

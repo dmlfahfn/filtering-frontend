@@ -1,9 +1,8 @@
 import React from "react";
 
 const VideoDisplay = ({videos, filteredArray}) => {
-  console.log("filteredArray",filteredArray);
 
-  let uniqueObjArray = [...new Map(filteredArray.map((item) => [item["version"], item])).values()];
+  let uniqueObjArray = [...new Map(filteredArray.map((item) => [item["id"], item])).values()];
   console.log("uniqueObjArray",uniqueObjArray);
   
   if(filteredArray.length !== 0){
