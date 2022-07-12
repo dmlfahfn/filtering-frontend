@@ -4,6 +4,8 @@ import VideoDisplay from "./components/VideoDisplay";
 import Search from "./components/Search";
 import { useState, useEffect } from 'react';
 
+
+//This components main job is to get data from the backend and display components 
 function App() {
 
 const [videos, setVideos] = useState([]);

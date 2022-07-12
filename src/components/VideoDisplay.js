@@ -1,5 +1,7 @@
 import React from "react";
 
+//This component finds the unique value of filtered item so that there are no doubles
+//and loops though them to show the "video cards".
 const VideoDisplay = ({videos, filteredArray, filteredResults}) => {
 
   let uniqueObjArray = [...new Map(filteredArray.map((item) => [item["id"], item])).values()];

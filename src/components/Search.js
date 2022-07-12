@@ -1,5 +1,7 @@
 import React, {useState} from "react";
 
+//This components does the same as filter, but instead for a searchbar.
+//This also send data to "VideoDisplay" component
 const Search = (props) => {
 
     const [searchInput, setSearchInput] = useState('');
