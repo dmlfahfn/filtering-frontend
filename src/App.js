@@ -44,12 +44,14 @@ function App() {
 ]
 
 const [filteredArray, setFilteredArray] = useState([]) 
+const [filteredResults, setFilteredResults] = useState([]);
+
 
   return (
     <div className="App">
-      <Search />
+      <Search videos={videos} {...{filteredResults, setFilteredResults}}/>
       <Filter videos={videos} {...{filteredArray, setFilteredArray}}/>
-      <VideoDisplay videos={videos} filteredArray= {filteredArray}/>
+      <VideoDisplay videos={videos} filteredArray= {filteredArray} filteredResults={filteredResults}/>
     </div>
   );
 }
