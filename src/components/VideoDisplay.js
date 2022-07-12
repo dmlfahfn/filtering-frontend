@@ -4,10 +4,6 @@ const VideoDisplay = ({videos, filteredArray, filteredResults}) => {
 
   let uniqueObjArray = [...new Map(filteredArray.map((item) => [item["id"], item])).values()];
   console.log("uniqueObjArray",uniqueObjArray);
-  
-  // if(filteredArray.length !== 0){
-  //   videos = uniqueObjArray
-  // }
 
   if(filteredResults.length !==0  ){
     videos = filteredResults
