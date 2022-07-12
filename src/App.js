@@ -2,8 +2,6 @@ import './App.css';
 import Filter from "./components/Filter";
 import VideoDisplay from "./components/VideoDisplay";
 import Search from "./components/Search";
-// import img1 from "./img/img_avatar.png";
-// import img2 from "./img/img_avatar2.png";
 import { useState, useEffect } from 'react';
 
 function App() {
