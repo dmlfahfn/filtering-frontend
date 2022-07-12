@@ -8,7 +8,7 @@ const VideoDisplay = ({videos, filteredArray, filteredResults}) => {
   if(filteredResults.length !==0  ){
     videos = filteredResults
   } else if(filteredArray.length !== 0){
-    videos = filteredArray
+    videos = uniqueObjArray
   }
 
   return (
