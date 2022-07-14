@@ -17,7 +17,7 @@ const VideoDisplay = ({videos, filteredArray, filteredResults}) => {
       <div className="Video-container">
           {videos.map(video => (
               <div className='card' key={video.id}>
-                <img key={video.title} alt="Person" src={video.image} />
+                <img key={video.title} alt="Person" src={"http://localhost:3000" + video.image} />
                 <div className='container'>
                   <h4>{video.title}</h4>
                   <p>{video.description}</p>
